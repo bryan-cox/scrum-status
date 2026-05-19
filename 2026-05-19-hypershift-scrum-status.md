@@ -43,8 +43,6 @@
 
 - **Non-feature work**
   - Putting together an architecture diagram for the HO release payload controller to share with the team
-  - Merged PR: Add openshift:api-review command
-    - PR(s): https://github.com/openshift-eng/ai-helpers/pull/383
   - Fixed LVM operator channel to use stable-4.22 and overrode LVM index image to v4.22 (v5.0 not yet published) to unblock disconnected agent CI
     - PR(s): https://github.com/openshift/release/pull/79267
   - Reviewed PR #8522, PR #8495, PR #482, commented on PR #76979
