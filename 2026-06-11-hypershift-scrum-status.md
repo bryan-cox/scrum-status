@@ -4,6 +4,10 @@
 
 ## 🦀 Things I've been working on
 
+- **[CNTRLPLANE-3271: e2e testing automation: External OIDC support for self-managed Azure HCP](https://issues.redhat.com/browse/CNTRLPLANE-3271)**
+  - Continued work on External OIDC e2e tests for v2 framework
+  - PR(s): https://github.com/openshift/hypershift/pull/8674
+
 - **[CNTRLPLANE-3613: Bump AKS Kubernetes version to 1.35.0](https://issues.redhat.com/browse/CNTRLPLANE-3613)**
   - Bumped AKS Kubernetes version to 1.35.0
   - PR(s): https://github.com/openshift/release/pull/80374
@@ -27,6 +31,10 @@
     - PR(s): https://github.com/openshift/release/pull/80348
 
 ## ⭐ Things I plan on working on next
+
+- **[CNTRLPLANE-3271: e2e testing automation: External OIDC support for self-managed Azure HCP](https://issues.redhat.com/browse/CNTRLPLANE-3271)**
+  - Finish implementation, dev test, and mark the PR ready for review
+  - PR(s): https://github.com/openshift/hypershift/pull/8674
 
 - **[CNTRLPLANE-3613: Bump AKS Kubernetes version to 1.35.0](https://issues.redhat.com/browse/CNTRLPLANE-3613)**
   - Finish implementation, dev test, and mark the PR ready for review
