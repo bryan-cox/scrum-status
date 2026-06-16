@@ -4,14 +4,10 @@
 
 ## 🦀 Things I've been working on
 
-- **[OCPBUGS-88531: cloud-network-config-controller is not restarted by RestartDateAnnotation](https://issues.redhat.com/browse/OCPBUGS-88531)**
-  - Propagated restart-date annotation to CNO operand pod templates
-  - PR closed (superseded)
-  - PR(s): https://github.com/openshift/hypershift/pull/8738
-
-- **[OCPSTRAT-3250: Konflux-based Release Pipeline controller for HyperShift Operator](https://issues.redhat.com/browse/OCPSTRAT-3250)**
-  - Merged enhancement PR
-  - PR(s): https://github.com/openshift/enhancements/pull/2016
+- **[CNTRLPLANE-3465: Implement HO/CPO image injection for ARO HCP environment](https://issues.redhat.com/browse/CNTRLPLANE-3465)**
+  - Adapted ARO HCP e2e workflow to slot-manager leasing model
+  - Addressed review feedback, clarified CPO image override validation error message
+  - PR(s): https://github.com/Azure/ARO-HCP/pull/5467, https://github.com/openshift/release/pull/79926
 
 - **[CNTRLPLANE-3271: e2e testing automation: External OIDC support for self-managed Azure HCP](https://issues.redhat.com/browse/CNTRLPLANE-3271)**
   - Continued work on External OIDC e2e tests for v2 framework
@@ -21,34 +17,42 @@
   - Created draft PR with Azure endpoint access transition e2e test
   - PR(s): https://github.com/openshift/hypershift/pull/8718
 
-- **[CNTRLPLANE-3465: Implement HO/CPO image injection for ARO HCP environment](https://issues.redhat.com/browse/CNTRLPLANE-3465)**
-  - Pushed updates adapting ARO HCP e2e workflow to slot-manager leasing model
-  - Addressed review feedback, clarified CPO image override validation error message
-  - PR(s): https://github.com/Azure/ARO-HCP/pull/5467, https://github.com/openshift/release/pull/79926
-
 - **[CNTRLPLANE-3617: Increase address-review-comments GHA workflow timeout from 30 to 45 minutes](https://issues.redhat.com/browse/CNTRLPLANE-3617)**
   - Increased timeout to 45 minutes — merged
-  - Created PR to increase max turns to 200
+  - Created follow-up PR to increase max turns to 200
   - PR(s): https://github.com/openshift/hypershift/pull/8720
 
-- **Non-feature work**
-  - Worked with Red Hat IT on Slack webhook configuration
-  - Ran team retrospective, put together summary items and action items
+- **[OCPBUGS-88531: cloud-network-config-controller is not restarted by RestartDateAnnotation](https://issues.redhat.com/browse/OCPBUGS-88531)**
+  - Investigated and prototyped fix to propagate restart-date annotation to CNO operand pod templates; approach superseded by upstream solution
+  - PR(s): https://github.com/openshift/hypershift/pull/8738
+
+- **[OCPSTRAT-3250: Konflux-based Release Pipeline controller for HyperShift Operator](https://issues.redhat.com/browse/OCPSTRAT-3250)**
+  - Merged enhancement PR
+  - PR(s): https://github.com/openshift/enhancements/pull/2016
+
+- **CI & test infrastructure**
+  - Replaced v1 Azure self-managed presubmit with v2, completing the migration off the legacy test framework — merged
+    - PR(s): https://github.com/openshift/release/pull/80348
+  - Added Sippy/Component Readiness test name annotations to v2 e2e tests so test results map correctly in dashboards — merged
+    - PR(s): https://github.com/openshift/hypershift/pull/8739
   - Updated OpenShift carry patches for apiserver-network-proxy for Go 1.26 / OpenShift 5.0
     - PR(s): https://github.com/openshift/apiserver-network-proxy/pull/113
-  - Added Sippy/CR test name annotations to v2 e2e tests — merged
-    - PR(s): https://github.com/openshift/hypershift/pull/8739
-  - Replaced v1 Azure self-managed presubmit with v2 — merged
-    - PR(s): https://github.com/openshift/release/pull/80348
+
+- **Code reviews**
+  - Reviewed 14 PRs across hypershift, openshift/release, openshift-docs, and apiserver-network-proxy repos
+
+- **Team & process**
+  - Led team retrospective; compiled summary items and action items
+  - Worked with Red Hat IT on Slack webhook configuration for jira-agent notifications
 
 ## ⭐ Things I plan on working on next
 
 - **[CNTRLPLANE-3271: e2e testing automation: External OIDC support for self-managed Azure HCP](https://issues.redhat.com/browse/CNTRLPLANE-3271)**
-  - Finish implementation, dev test, and mark the PR ready for review
+  - Wire up OIDC provider configuration in test setup, dev test, and mark PR ready for review
   - PR(s): https://github.com/openshift/hypershift/pull/8674
 
 - **[CNTRLPLANE-3276: Add e2e test for private to publicAndPrivate endpoint access transition](https://issues.redhat.com/browse/CNTRLPLANE-3276)**
-  - Finish implementation, dev test, and mark the PR ready for review
+  - Implement endpoint access transition validation, dev test, and mark PR ready for review
   - PR(s): https://github.com/openshift/hypershift/pull/8718
 
 - **[CNTRLPLANE-3465: Implement HO/CPO image injection for ARO HCP environment](https://issues.redhat.com/browse/CNTRLPLANE-3465)**
@@ -56,7 +60,7 @@
   - PR(s): https://github.com/Azure/ARO-HCP/pull/5467
 
 - **[CNTRLPLANE-3617: Increase address-review-comments GHA workflow timeout from 30 to 45 minutes](https://issues.redhat.com/browse/CNTRLPLANE-3617)**
-  - Get PR reviewed and merged
+  - Get max-turns PR reviewed and merged
   - PR(s): https://github.com/openshift/hypershift/pull/8720
 
 - **Non-feature work**
