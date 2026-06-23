@@ -95,4 +95,9 @@
   - Get PR reviewed and merged
   - PR(s): https://github.com/openshift/release/pull/80927
 
+## 🚧 Blockers
+
+- **[CNTRLPLANE-3465: Implement HO/CPO image injection for ARO HCP environment](https://issues.redhat.com/browse/CNTRLPLANE-3465)**
+  - Waiting on ARO HCP team to add the new subscription to ARO HCP slot manager in vault before dev testing the e2e workflow
+
 Full status available at https://github.com/bryan-cox/scrum-status/blob/main/2026-06-23-hypershift-scrum-status.md
