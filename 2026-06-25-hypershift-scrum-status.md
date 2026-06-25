@@ -28,7 +28,23 @@
   - Excluded generated delegating client from codecov (merged)
   - Fixed eval-address-reviews EVAL_CONFIG path (merged)
   - Fixed CI: prevented Claude from breaking push credentials in fork PRs
-  - Code reviews: reviewed and commented on 17 PRs across hypershift, release, ai-helpers, and cluster-api-provider-azure repos
+  - Code reviews:
+    - Reviewed https://github.com/kubernetes-sigs/cluster-api-provider-azure/pull/6386
+    - Reviewed https://github.com/openshift-eng/ai-helpers/pull/569
+    - Reviewed https://github.com/openshift/hypershift/pull/8402
+    - Reviewed https://github.com/openshift/hypershift/pull/8584
+    - Reviewed https://github.com/openshift/hypershift/pull/8742
+    - Reviewed https://github.com/openshift/hypershift/pull/8820
+    - Reviewed https://github.com/openshift/hypershift/pull/8821
+    - Reviewed https://github.com/openshift/hypershift/pull/8824
+    - Reviewed https://github.com/openshift/release/pull/78386
+    - Commented on https://github.com/openshift/hypershift/pull/8211
+    - Commented on https://github.com/openshift/hypershift/pull/8280
+    - Commented on https://github.com/openshift/hypershift/pull/8319
+    - Commented on https://github.com/openshift/hypershift/pull/8401
+    - Commented on https://github.com/openshift/hypershift/pull/8499
+    - Commented on https://github.com/openshift/hypershift/pull/8734
+    - Commented on https://github.com/openshift/hypershift/pull/8816
 
 ## ⭐ Things I plan on working on next
 
