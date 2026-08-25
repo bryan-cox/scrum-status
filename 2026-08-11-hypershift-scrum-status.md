@@ -4,64 +4,40 @@
 
 ## 🦀 Things I've been working on
 
-- **[OCPBUGS-100054: Azure Private clusters set publicZone in dns.cluster causing ingress 403 AuthorizationFailed](https://issues.redhat.com/browse/OCPBUGS-100054)**
-  - Fixed Azure Private clusters without external DNS
-  - PR merged
-  - PR(s): https://github.com/openshift/hypershift/pull/9171
+### Bug fixes — merged
 
-- **[OCPBUGS-100279: GitHub Actions reusable-claude-on-pr workflow security fix](https://issues.redhat.com/browse/OCPBUGS-100279)**
-  - Isolated Claude from push credentials in PR workflows
-  - Loaded trusted commands from main for bare mode skill resolution
-  - PR #9220 merged, PR #9214 merged
-  - PR(s): https://github.com/openshift/hypershift/pull/9220, https://github.com/openshift/hypershift/pull/9214
+- **[OCPBUGS-100054: Azure Private cluster ingress 403 AuthorizationFailed](https://issues.redhat.com/browse/OCPBUGS-100054)** — Release blocker. Private clusters without `--external-dns-domain` were unconditionally setting `publicZone` in `dns.cluster`, causing the ingress operator to fail with 403. Skipped `publicZone` for Private topology and added a defense-in-depth guard in `ReconcileDNSConfig`. Fix verified in nightly `5.0.0-0.nightly-2026-08-06-135032`. PR: [#9171](https://github.com/openshift/hypershift/pull/9171)
 
-- **[OCPBUGS-105597: GHA runner base image needs update to unblock CI](https://issues.redhat.com/browse/OCPBUGS-105597)**
-  - Updated GHA runner base image to unblock CI
-  - PR merged
-  - PR(s): https://github.com/openshift/hypershift/pull/9275
+- **[OCPBUGS-100279: GitHub Actions workflow security vulnerability](https://issues.redhat.com/browse/OCPBUGS-100279)** — Performed a full security assessment of the `reusable-claude-on-pr` workflow, verified the injection vectors, corrected the CVSS from 8.0 to 4.2 with evidence, and implemented the fix: added `--bare` mode to prevent context-file injection and separated Claude execution from push credentials. Two PRs merged: [#9214](https://github.com/openshift/hypershift/pull/9214), [#9220](https://github.com/openshift/hypershift/pull/9220)
 
-- **[OCPBUGS-105193: HCCO WebhookValidation test consistently times out](https://issues.redhat.com/browse/OCPBUGS-105193)**
-  - Extracted HCCO webhook validation into a dedicated controller
-  - Increased WebhookValidation e2e timeout to 3 minutes
-  - PR(s): https://github.com/openshift/hypershift/pull/9239
+- **[OCPBUGS-105597: GHA runner image deprecated — CI completely blocked](https://issues.redhat.com/browse/OCPBUGS-105597)** — GitHub Actions were down across the repo because the runner image v2.334.0 was deprecated. Updated the base image to unblock all GHA-based CI. PR: [#9275](https://github.com/openshift/hypershift/pull/9275)
 
-- **[CNTRLPLANE-4009: Define Hypershift-Presubmit label and test suite in ARO-HCP](https://issues.redhat.com/browse/CNTRLPLANE-4009)**
-  - Added Hypershift-Presubmit label, test suite, and e2e-aro-hcp-presubmit job
-  - Added version-agnostic HyperShift presubmit e2e test
-  - PR(s): https://github.com/Azure/ARO-HCP/pull/6456, https://github.com/openshift/release/pull/83108
+### CI reliability & developer tooling — in progress
 
-- **[CNTRLPLANE-4008: Add hypershiftlinter golangci-lint plugin](https://issues.redhat.com/browse/CNTRLPLANE-4008)**
-  - Added hypershiftlinter golangci-lint plugin to enforce TESTING.md and AGENTS.md conventions
-  - Aligned unit test naming with TESTING.md conventions
-  - Vendored golang.org/x/tools analysistest packages
-  - PR(s): https://github.com/openshift/hypershift/pull/9271
+- **[OCPBUGS-105193: WebhookValidation test timeout — 31% of self-managed Azure job failures](https://issues.redhat.com/browse/OCPBUGS-105193)** — Root-caused the timeout: `ensureGuestAdmissionWebhooksAreValid()` runs as the last step in a 12+ sub-reconciler chain, so a single queued reconcile easily exceeds the 60s test timeout. Implementing the best-fix approach: extracting webhook validation into a dedicated lightweight controller with its own watches, decoupled from the heavy main reconcile loop. PR: [#9239](https://github.com/openshift/hypershift/pull/9239)
 
-- **[OCPBUGS-105434](https://issues.redhat.com/browse/OCPBUGS-105434)**
-  - Helping Ben with reviews and backporting
+- **[CNTRLPLANE-4009: ARO-HCP presubmit test suite for HyperShift CPO validation](https://issues.redhat.com/browse/CNTRLPLANE-4009)** — Defined the `Hypershift-Presubmit` Ginkgo label and test suite in ARO-HCP, wrote a version-agnostic presubmit e2e test, and created the `e2e-aro-hcp-presubmit` CI job with CPO image override and nightly payload support. PRs: [ARO-HCP#6456](https://github.com/Azure/ARO-HCP/pull/6456), [release#83108](https://github.com/openshift/release/pull/83108)
 
-- **[OCPSTRAT-3549: Azure CAPI Provider onboarding](https://issues.redhat.com/browse/OCPSTRAT-3549)**
-  - Helping Hilliary with reviews, backporting, and meeting to explain the OCP backport release process
+- **[CNTRLPLANE-4008: hypershiftlinter — automated convention enforcement](https://issues.redhat.com/browse/CNTRLPLANE-4008)** — Built a custom golangci-lint v2 plugin with 7 analyzers that enforce TESTING.md and AGENTS.md conventions (test naming, sippy annotations, guest cluster terminology, context usage, IPv6-safe URLs, vacuous pass patterns) as deterministic CI checks. Replaces manual review for mechanical convention violations. PR: [#9271](https://github.com/openshift/hypershift/pull/9271)
 
-- **Non-feature work**
-  - Fixed GitHub token refresh in openshift-developer review agent (PR merged): https://github.com/openshift-eng/ai-helpers/pull/648
-  - Separated gci-only pre-commit hooks from full lint-fix targets (PR merged): https://github.com/openshift/hypershift/pull/9272
-  - Switched hypershift review-agent workflow from GitHub App to PAT auth: https://github.com/openshift/release/pull/83182
+### Team support & mentorship
+
+- **[OCPBUGS-105434: Ignition route / NIC contention failures on Azure](https://issues.redhat.com/browse/OCPBUGS-105434)** — Helping Ben with code reviews and backporting
+
+- **[OCPSTRAT-3549: Azure mHSM support (CAPI Provider onboarding)](https://issues.redhat.com/browse/OCPSTRAT-3549)** — Helping Hilliary with code reviews, backporting, and meeting to explain the OCP backport release process
+
+### Non-feature work
+
+- Fixed GitHub token refresh race in openshift-developer review agent (merged): [ai-helpers#648](https://github.com/openshift-eng/ai-helpers/pull/648)
+- Separated gci-only pre-commit hooks from full lint-fix targets (merged): [#9272](https://github.com/openshift/hypershift/pull/9272)
+- Switched hypershift review-agent workflow from GitHub App to PAT auth: [release#83182](https://github.com/openshift/release/pull/83182)
 
 ## ⭐ Things I plan on working on next
 
-- **[OCPBUGS-105193: HCCO WebhookValidation test consistently times out](https://issues.redhat.com/browse/OCPBUGS-105193)**
-  - Finish implementation, dev test, and mark the PR ready for review
-  - PR(s): https://github.com/openshift/hypershift/pull/9239
+- **[OCPBUGS-105193](https://issues.redhat.com/browse/OCPBUGS-105193)** — Finish the dedicated webhook validation controller, dev test, and open for review. This should significantly improve the 47% pass rate on `e2e-v2-azure-self-managed`.
 
-- **[CNTRLPLANE-4009: Define Hypershift-Presubmit label and test suite in ARO-HCP](https://issues.redhat.com/browse/CNTRLPLANE-4009)**
-  - Get PRs reviewed and merged
-  - PR(s): https://github.com/Azure/ARO-HCP/pull/6456, https://github.com/openshift/release/pull/83108
+- **[CNTRLPLANE-4009](https://issues.redhat.com/browse/CNTRLPLANE-4009)** — Get the ARO-HCP presubmit suite and CI job reviewed and merged, enabling HyperShift PRs to run targeted CPO validation before merge.
 
-- **[CNTRLPLANE-4008: Add hypershiftlinter golangci-lint plugin](https://issues.redhat.com/browse/CNTRLPLANE-4008)**
-  - Finish implementation, dev test, and mark the PR ready for review
-  - PR(s): https://github.com/openshift/hypershift/pull/9271
-
-- **Non-feature work**
-  - Get review-agent PAT auth PR reviewed and merged: https://github.com/openshift/release/pull/83182
+- **[CNTRLPLANE-4008](https://issues.redhat.com/browse/CNTRLPLANE-4008)** — Finish the hypershiftlinter plugin and get it merged, automating convention enforcement that currently costs reviewer time on every PR.
 
 Full status available at https://github.com/bryan-cox/scrum-status/blob/main/2026-08-11-hypershift-scrum-status.md

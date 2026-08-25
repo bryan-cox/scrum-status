@@ -6,6 +6,8 @@
 
 ### CI reliability & Developer Tooling — merged
 
+- **[OCPBUGS-111601: Prevent conversion webhook startup deadlock](https://issues.redhat.com/browse/OCPBUGS-111601)** — Decoupled webhook readiness from metrics, updated health check handling, and added v2 upgrade status checks. PR merged: [#9387](https://github.com/openshift/hypershift/pull/9387)
+
 - **[CNTRLPLANE-4008: hypershiftlinter — automated convention enforcement](https://issues.redhat.com/browse/CNTRLPLANE-4008)** — Merged `hypershiftlinter` golangci-lint plugin enablement and unit test naming alignment. PR merged: [#9271](https://github.com/openshift/hypershift/pull/9271)
 
 - **[CNTRLPLANE-4169: Add GHA envtest jobs for Kubernetes 1.36](https://issues.redhat.com/browse/CNTRLPLANE-4169)** — Merged Kubernetes 1.36 envtest GHA matrix jobs and OCP 5.0 dual versioning docs. PR merged: [#9353](https://github.com/openshift/hypershift/pull/9353)
@@ -20,8 +22,6 @@
 
 ### Bug fixes & Infrastructure — in progress
 
-- **[OCPBUGS-111601: Prevent conversion webhook startup deadlock](https://issues.redhat.com/browse/OCPBUGS-111601)** — Decoupled webhook readiness from metrics, updated health check handling, and added v2 upgrade status checks. PR: [#9387](https://github.com/openshift/hypershift/pull/9387)
-
 - **[OCPBUGS-113580: Bound NodePool metrics cache reads](https://issues.redhat.com/browse/OCPBUGS-113580)** — Bounded NodePool cache reads for metrics calculation to improve performance. PR: [#9389](https://github.com/openshift/hypershift/pull/9389)
 
 - **[CNTRLPLANE-3277: OAuth internal LB service for self-managed Azure](https://issues.redhat.com/browse/CNTRLPLANE-3277)** — Locally testing OAuth internal LB service e2e for self-managed Azure.
@@ -30,7 +30,6 @@
 
 ## ⭐ Things I plan on working on next
 
-- **[OCPBUGS-111601](https://issues.redhat.com/browse/OCPBUGS-111601)** — Get conversion webhook startup deadlock fix reviewed and merged.
 - **[OCPBUGS-113580](https://issues.redhat.com/browse/OCPBUGS-113580)** — Get NodePool metrics cache bounding PR reviewed and merged.
 - **[CNTRLPLANE-4175](https://issues.redhat.com/browse/CNTRLPLANE-4175)** — Finish testing and get central team-config PR reviewed and merged.
 
