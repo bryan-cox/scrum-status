@@ -32,6 +32,12 @@
 
 - **Stagger ARO HCP e2e periodic cron and bump boskos slots (in progress)** — Staggered ARO HCP periodic e2e cron schedule and bumped boskos slots: [release#84113](https://github.com/openshift/release/pull/84113)
 
+### Code Reviews & PR Feedback
+
+- **Reviewing Pull Requests (13 reviewed, 8 commented on — 21 unique PRs)**:
+  - Reviewed: [#8682](https://github.com/openshift/hypershift/pull/8682), [#8710](https://github.com/openshift/hypershift/pull/8710), [#8787](https://github.com/openshift/hypershift/pull/8787), [#9286](https://github.com/openshift/hypershift/pull/9286), [#9299](https://github.com/openshift/hypershift/pull/9299), [#9373](https://github.com/openshift/hypershift/pull/9373), [#9375](https://github.com/openshift/hypershift/pull/9375), [#9388](https://github.com/openshift/hypershift/pull/9388), [#9405](https://github.com/openshift/hypershift/pull/9405), [#9414](https://github.com/openshift/hypershift/pull/9414), [#9415](https://github.com/openshift/hypershift/pull/9415), [#9422](https://github.com/openshift/hypershift/pull/9422), [#9430](https://github.com/openshift/hypershift/pull/9430)
+  - Commented on: [#8474](https://github.com/openshift/hypershift/pull/8474), [#9051](https://github.com/openshift/hypershift/pull/9051), [#9132](https://github.com/openshift/hypershift/pull/9132), [#9232](https://github.com/openshift/hypershift/pull/9232), [#9279](https://github.com/openshift/hypershift/pull/9279), [#9376](https://github.com/openshift/hypershift/pull/9376), [#9377](https://github.com/openshift/hypershift/pull/9377), [#9378](https://github.com/openshift/hypershift/pull/9378)
+
 ### CI Infrastructure & Cluster Maintenance
 
 - Restored health and fixed the self-managed Azure root CI cluster
