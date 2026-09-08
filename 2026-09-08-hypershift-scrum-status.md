@@ -20,6 +20,7 @@
 
 ### Non-feature work
 
+- Worked on DevConf presentation slides
 - Out on PTO on Friday (9/4) and US Labor Day holiday on Monday (9/7)
 
 ### Code Reviews & PR Feedback
@@ -30,6 +31,7 @@
 
 ## ⭐ Things I plan on working on next
 
+- **DevConf Slides** — Continue preparing and refining presentation slides for DevConf.
 - **[CNTRLPLANE-550](https://issues.redhat.com/browse/CNTRLPLANE-550)** — Finish implementation, dev test, and mark the HyperShift CLI refactoring PR ready for review.
 - **[CNTRLPLANE-4216](https://issues.redhat.com/browse/CNTRLPLANE-4216)** — Get AKS CI VM generation migration PR reviewed and merged.
 - **[CNTRLPLANE-4207](https://issues.redhat.com/browse/CNTRLPLANE-4207)** — Get Azure lifecycle test sharding documentation PR reviewed and merged.
