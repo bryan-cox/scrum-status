@@ -12,6 +12,8 @@
 
 ### Features & Infrastructure — in progress
 
+- **[CNTRLPLANE-4386: Configure hosted control plane component replicas](https://issues.redhat.com/browse/CNTRLPLANE-4386)** — Added control plane component configuration and replica propagation in hypershift-operator. PR: [#9579](https://github.com/openshift/hypershift/pull/9579)
+
 - **[CNTRLPLANE-4209: Consolidate Azure autoscaling lifecycle cluster](https://issues.redhat.com/browse/CNTRLPLANE-4209)** — Evaluated consolidation of Azure v2 autoscaling test clusters, consolidated test lanes, and rejected variants shared across concurrent lanes. PRs: [#9556](https://github.com/openshift/hypershift/pull/9556), [#9571](https://github.com/openshift/hypershift/pull/9571)
 
 - **[CNTRLPLANE-550: Refactor HyperShift CLI for cross-platform consistency and testability](https://issues.redhat.com/browse/CNTRLPLANE-550)** — Injected management-cluster clients consistently across CLI, hypershift-operator, and CPO; recreated PR against openshift/hypershift. PRs: [#397](https://github.com/bryan-cox/hypershift/pull/397), [#9570](https://github.com/openshift/hypershift/pull/9570)
@@ -35,6 +37,7 @@
 ## ⭐ Things I plan on working on next
 
 - **DevConf Slides** — Continue preparing and refining presentation slides for DevConf.
+- **[CNTRLPLANE-4386](https://issues.redhat.com/browse/CNTRLPLANE-4386)** — Finish implementation, dev test, and open control plane component replica configuration PR for review.
 - **[CNTRLPLANE-4209](https://issues.redhat.com/browse/CNTRLPLANE-4209)** — Get Azure autoscaling lifecycle test lane consolidation PR reviewed and merged.
 - **[CNTRLPLANE-550](https://issues.redhat.com/browse/CNTRLPLANE-550)** — Get the recreated HyperShift CLI client refactoring PR reviewed and merged.
 - **[CNTRLPLANE-4216](https://issues.redhat.com/browse/CNTRLPLANE-4216)** — Get AKS CI VM generation migration PR merged following review approval.
