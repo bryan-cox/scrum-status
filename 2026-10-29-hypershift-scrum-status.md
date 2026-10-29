@@ -48,7 +48,7 @@
 
 ## 🚧 Blockers
 
-- **ARO HCP v2 e2e test feature** — [#7727](https://github.com/Azure/ARO-HCP/pull/7727) merged Oct 29; still waiting on the merge of [#7757](https://github.com/Azure/ARO-HCP/pull/7757) (approved by machi1990) in `Azure/ARO-HCP`.
+- **ARO HCP v2 e2e test feature** — still blocked. [#7757](https://github.com/Azure/ARO-HCP/pull/7757) remains open with no human approval (`review_decision: none`; only copilot-bot and author comments) in `Azure/ARO-HCP`. [#7727](https://github.com/Azure/ARO-HCP/pull/7727) merged Oct 29 but does not unblock this.
 
 ## ⭐ Things I plan on working on next
 
