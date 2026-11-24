@@ -2,25 +2,25 @@
 
 *Generated from the Obsidian daily worklog using the TaskLedger status-update workflow.*
 
-Coverage: November 19–24 inclusive, with daily notes for November 19, 20, 23, and 24. Latest worklog activity is through November 24 at 8:06 a.m. Eastern. PR states and rehearsal evidence were checked at report time.
+Coverage: November 19–24 inclusive, with daily notes for November 19, 20, 23, and 24. Latest worklog activity is through November 24 at 8:06 a.m. Eastern. GitHub PR states and Prow rehearsal results were rechecked on November 24. The later CAPI metrics update is dated separately.
 
 ## 🦀 Things I've been working on
 
 ### [CNTRLPLANE-5031](https://redhat.atlassian.net/browse/CNTRLPLANE-5031) · Azure v2 CI root migration
 
-- The OpenShift merge bot merged [openshift/release #89047](https://github.com/openshift/release/pull/89047) on November 19 after a full Azure v2 rehearsal passed in UK South, including the Azure File CSI and route-controller checks, KMS secret encryption, and cleanup.
+- The OpenShift merge bot merged [openshift/release #89047](https://github.com/openshift/release/pull/89047) on November 19. The full Azure v2 rehearsal passed in UK South on the earlier revision `6d27eb2`.
 
 ### [CNTRLPLANE-5061](https://redhat.atlassian.net/browse/CNTRLPLANE-5061) · Azure performance job migration
 
-- The OpenShift merge bot merged [openshift/release #89185](https://github.com/openshift/release/pull/89185) after the release-5.0 and release-5.1 performance periodics both passed rehearsals in UK South and produced metrics.
+- The OpenShift merge bot merged [openshift/release #89185](https://github.com/openshift/release/pull/89185). The release-5.0 and release-5.1 performance rehearsals both passed in UK South on `47b6630` and each produced metrics files.
 
 ### [CNTRLPLANE-5029](https://redhat.atlassian.net/browse/CNTRLPLANE-5029) · Remaining Azure CI jobs
 
-- Opened [openshift/release #89277](https://github.com/openshift/release/pull/89277) to move the release-4.22 self-managed Azure e2e jobs and the Azure deprovision periodic to UK South. The PR records passing rehearsals for the 4.22 job, the deprovision periodic, and both performance periodics. The PR is open and in review.
+- [openshift/release #89277](https://github.com/openshift/release/pull/89277) is **open**. It proposes moving the release-4.22 self-managed Azure e2e jobs and deprovision periodic to UK South. The 4.22 e2e, deprovision, and both performance rehearsals passed on `4b5650f`. On `5d5f1b4`, deprovision passed and the 4.22 e2e rerun was pending when checked.
 
-### [CNTRLPLANE-4969](https://redhat.atlassian.net/browse/CNTRLPLANE-4969) · PR-built HyperShift v2 checks in the ARO HCP presubmit
+### [CNTRLPLANE-4969](https://redhat.atlassian.net/browse/CNTRLPLANE-4969) · Native HyperShift v2 conditions in the ARO HCP presubmit
 
-- A targeted rehearsal of [openshift/release #88591](https://github.com/openshift/release/pull/88591) produced a passing native v2 conditions result against the provisioned HostedCluster. The latest revision lets slot-manager select the region and has a fresh rehearsal requested. The payload-capability change in [openshift/hypershift #10335](https://github.com/openshift/hypershift/pull/10335) remains in draft.
+- An earlier rehearsal of [openshift/release #88591](https://github.com/openshift/release/pull/88591) on `c2be601` passed one native HyperShift v2 conditions test using a build of HyperShift main. The rerun for slot-manager region selection on `4e598cf` was pending when checked. The payload capability change in [openshift/hypershift #10335](https://github.com/openshift/hypershift/pull/10335) remains an open draft.
 
 ### [OCPBUGS-134941](https://redhat.atlassian.net/browse/OCPBUGS-134941) · CLI help for the infrastructure availability default
 
@@ -28,12 +28,12 @@ Coverage: November 19–24 inclusive, with daily notes for November 19, 20, 23, 
 
 ### [OCPBUGS-140851](https://redhat.atlassian.net/browse/OCPBUGS-140851) · CAPI manager metrics over TLS
 
-- Updated [openshift/hypershift #10323](https://github.com/openshift/hypershift/pull/10323) to scrape CAPI manager metrics over TLS and added e2e coverage for the secured endpoint. The PR is open.
+- The worklog records HTTP metrics and PodMonitor changes in [openshift/hypershift #10323](https://github.com/openshift/hypershift/pull/10323). A later update at 9:35 a.m. Eastern added the TLS implementation and an e2e test. The PR remains open.
 
 ### Non-feature work / CI Infrastructure
 
-- Consolidated the remaining AKS v1 coverage work into [CNTRLPLANE-3982](https://redhat.atlassian.net/browse/CNTRLPLANE-3982) and kept CPO compatibility and upgrade coverage under [OCPSTRAT-4074](https://redhat.atlassian.net/browse/OCPSTRAT-4074).
-- The Azure v2 and performance migrations landed under [OCPSTRAT-3858](https://redhat.atlassian.net/browse/OCPSTRAT-3858). The release-4.22 and deprovision changes are the remaining job moves.
+- Closed [CNTRLPLANE-3455](https://redhat.atlassian.net/browse/CNTRLPLANE-3455) and [CNTRLPLANE-3456](https://redhat.atlassian.net/browse/CNTRLPLANE-3456) as duplicates of the AKS v1 coverage epic [CNTRLPLANE-3982](https://redhat.atlassian.net/browse/CNTRLPLANE-3982). CPO compatibility and upgrade coverage is tracked under [OCPSTRAT-4074](https://redhat.atlassian.net/browse/OCPSTRAT-4074).
+- The Azure CI migration is tracked under [OCPSTRAT-3858](https://redhat.atlassian.net/browse/OCPSTRAT-3858).
 
 ### Code Reviews
 
@@ -43,7 +43,7 @@ Coverage: November 19–24 inclusive, with daily notes for November 19, 20, 23, 
 
 ## ⭐ Things I plan on working on next
 
-- Address review feedback on [openshift/release #89277](https://github.com/openshift/release/pull/89277) for [CNTRLPLANE-5029](https://redhat.atlassian.net/browse/CNTRLPLANE-5029). Follow up on the remaining old credential mounts before retiring the old Azure CI root.
+- Check the 4.22 e2e rerun and address review feedback on [openshift/release #89277](https://github.com/openshift/release/pull/89277) for [CNTRLPLANE-5029](https://redhat.atlassian.net/browse/CNTRLPLANE-5029). Follow up on the remaining old credential mounts before retiring the old Azure CI root.
 - Verify the ARO HCP presubmit rehearsal on the updated region-selection change and move [openshift/release #88591](https://github.com/openshift/release/pull/88591) toward merge for [CNTRLPLANE-4969](https://redhat.atlassian.net/browse/CNTRLPLANE-4969).
 - Get [openshift/hypershift #10323](https://github.com/openshift/hypershift/pull/10323) reviewed for [OCPBUGS-140851](https://redhat.atlassian.net/browse/OCPBUGS-140851) and continue the AKS v1 coverage migration under [CNTRLPLANE-3982](https://redhat.atlassian.net/browse/CNTRLPLANE-3982).
 
