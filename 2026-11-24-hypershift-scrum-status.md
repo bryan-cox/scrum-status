@@ -8,15 +8,15 @@ Coverage: November 19–24 inclusive, with daily notes for November 19, 20, 23, 
 
 ### [CNTRLPLANE-5031](https://redhat.atlassian.net/browse/CNTRLPLANE-5031) · Azure v2 CI root migration
 
-- Merged [openshift/release #89047](https://github.com/openshift/release/pull/89047) on November 19 after a full Azure v2 rehearsal passed in UK South, including the Azure File CSI and route-controller checks, KMS secret encryption, and cleanup.
+- The OpenShift merge bot merged [openshift/release #89047](https://github.com/openshift/release/pull/89047) on November 19 after a full Azure v2 rehearsal passed in UK South, including the Azure File CSI and route-controller checks, KMS secret encryption, and cleanup.
 
 ### [CNTRLPLANE-5061](https://redhat.atlassian.net/browse/CNTRLPLANE-5061) · Azure performance job migration
 
-- Merged [openshift/release #89185](https://github.com/openshift/release/pull/89185) after the release-5.0 and release-5.1 performance periodics both passed rehearsals in UK South and produced metrics.
+- The OpenShift merge bot merged [openshift/release #89185](https://github.com/openshift/release/pull/89185) after the release-5.0 and release-5.1 performance periodics both passed rehearsals in UK South and produced metrics.
 
 ### [CNTRLPLANE-5029](https://redhat.atlassian.net/browse/CNTRLPLANE-5029) · Remaining Azure CI jobs
 
-- Opened [openshift/release #89277](https://github.com/openshift/release/pull/89277) to move the release-4.22 self-managed Azure e2e jobs and the Azure deprovision periodic to UK South. The PR records passing rehearsals for the 4.22 job, the deprovision periodic, and both performance periodics. Review is in progress.
+- Opened [openshift/release #89277](https://github.com/openshift/release/pull/89277) to move the release-4.22 self-managed Azure e2e jobs and the Azure deprovision periodic to UK South. The PR records passing rehearsals for the 4.22 job, the deprovision periodic, and both performance periodics. The PR is open and in review.
 
 ### [CNTRLPLANE-4969](https://redhat.atlassian.net/browse/CNTRLPLANE-4969) · PR-built HyperShift v2 checks in the ARO HCP presubmit
 
@@ -24,7 +24,7 @@ Coverage: November 19–24 inclusive, with daily notes for November 19, 20, 23, 
 
 ### [OCPBUGS-134941](https://redhat.atlassian.net/browse/OCPBUGS-134941) · CLI help for the infrastructure availability default
 
-- Merged [openshift/hypershift #10324](https://github.com/openshift/hypershift/pull/10324) on November 23 to show the SingleReplica default for `--infra-availability-policy` in CLI help.
+- The OpenShift merge bot merged [openshift/hypershift #10324](https://github.com/openshift/hypershift/pull/10324) on November 23 to show the SingleReplica default for `--infra-availability-policy` in CLI help.
 
 ### [OCPBUGS-140851](https://redhat.atlassian.net/browse/OCPBUGS-140851) · CAPI manager metrics over TLS
 
